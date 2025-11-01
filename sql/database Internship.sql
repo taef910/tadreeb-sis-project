@@ -12,23 +12,6 @@ CREATE TABLE IF NOT EXISTS Internship (
 );
 
 DELIMITER //
-CREATE PROCEDURE addInternship(
-    IN p_title VARCHAR(150),
-    IN p_company VARCHAR(150),
-    IN p_description TEXT,
-    IN p_requirement TEXT,
-    IN p_location VARCHAR(150),
-    IN p_duration VARCHAR(100),
-    IN p_semester VARCHAR(50),
-    IN p_deadline DATE
-)
-BEGIN
-    INSERT INTO Internship (title, company, description, requirement, location, duration, semester, deadline, isVerified)
-    VALUES (p_title, p_company, p_description, p_requirement, p_location, p_duration, p_semester, p_deadline, FALSE);
-END //
-DELIMITER ;
-
-DELIMITER //
 CREATE PROCEDURE updateDetails(
     IN p_internshipID INT,
     IN p_title VARCHAR(150),
@@ -97,3 +80,4 @@ BEGIN
     WHERE studentID = p_studentID AND internshipID = p_internshipID;
 END //
 DELIMITER ;
+
