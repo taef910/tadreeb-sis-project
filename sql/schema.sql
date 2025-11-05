@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS StudentsInterests (
     interest VARCHAR(100),
     PRIMARY KEY (studentID, interest),
     FOREIGN KEY (studentID) REFERENCES Students(studentID) ON DELETE CASCADE
-)
+);
 
 CREATE TABLE IF NOT EXISTS Internship (
     internshipID INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS Internship (
     semester VARCHAR(50),
     deadline DATE,
     isVerified BOOLEAN DEFAULT FALSE
-)
+);
+
 
 DELIMITER //
 CREATE PROCEDURE updateDetails(
