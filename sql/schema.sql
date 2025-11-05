@@ -86,8 +86,10 @@ CREATE TABLE IF NOT EXISTS Bookmark (
     internshipID INT NOT NULL,
     dateBookmarked DATE NOT NULL,
     UNIQUE(studentID, internshipID),
+    FOREIGN KEY (studentID) REFERENCES Students(studentID),
     FOREIGN KEY (internshipID) REFERENCES Internship(internshipID)
 );
+
 
 DELIMITER //
 CREATE PROCEDURE addBookmark(
